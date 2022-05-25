@@ -20,10 +20,6 @@ class Scraper:
         self.username = username
         self.password = password
 
-            
-        # username = secrets.username  #this is where your username
-        # password = secrets.password
-    def web_scrape():
                
         PATH = "/usr/bin/chromedriver"
         driver = webdriver.Chrome(PATH)
@@ -37,9 +33,9 @@ class Scraper:
      
 
         #find elm passowrd and send password
-        password = driver.find_element_by_id("session_password")
-        password.send_keys(password)
-        password.send_keys(Keys.RETURN)
+        passwrd = driver.find_element_by_id("session_password")
+        passwrd.send_keys(password)
+        passwrd.send_keys(Keys.RETURN)
 
         time.sleep(5)
 
@@ -47,14 +43,19 @@ class Scraper:
         signin.click()
 
     
+     
+        # username = secrets.username  #this is where your username
+        # password = secrets.password
+    def web_scrape():
 
+        pass
+       
 
 
 
 # print (Scraper.login(Scraper, username, password))
 
 Scraper.login(Scraper, username, password)
-Scraper.web_scrape()
 # 
 # try:
     # main = WebDriverWait(driver, 10).until(
