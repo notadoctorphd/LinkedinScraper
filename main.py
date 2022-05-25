@@ -4,26 +4,27 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
-from secrets import username, password
 
 class Scraper:
 
+    global username, password
+    username = input("Type Username: ")
+    password = input("Type Password: ")
+
     def __init__(self):
         pass          
+
     
     def login(self, username, password):
 
         self.username = username
         self.password = password
 
-        print("Enter your credentials : \n ")
-         
-        username = input("Enter your username: ")
-        password = input("Enter you password: ")
             
         # username = secrets.username  #this is where your username
         # password = secrets.password
-           
+    def web_scrape():
+               
         PATH = "/usr/bin/chromedriver"
         driver = webdriver.Chrome(PATH)
 
@@ -48,11 +49,12 @@ class Scraper:
     
 
 
-  #  driver.quit()
+
+
+# print (Scraper.login(Scraper, username, password))
+
 Scraper.login(Scraper, username, password)
-
-
-
+Scraper.web_scrape()
 # 
 # try:
     # main = WebDriverWait(driver, 10).until(
