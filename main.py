@@ -4,38 +4,52 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
+from secrets import username, password
 
+class Scraper:
 
-def login():
+    def __init__(self):
+        pass          
     
-    username = #this is where your username
-    password = # password
+    def login(self, username, password):
 
-    PATH = "/usr/bin/chromedriver"
-    driver = webdriver.Chrome(PATH)
+        self.username = username
+        self.password = password
 
-    driver.get('https://www.linkedin.com')
-    print(driver.title)
- 
-    #find elem username/email and send username
-    email = driver.find_element_by_id("session_key")
-    email.send_keys(username) #
- 
+        print("Enter your credentials : \n ")
+         
+        username = input("Enter your username: ")
+        password = input("Enter you password: ")
+            
+        # username = secrets.username  #this is where your username
+        # password = secrets.password
+           
+        PATH = "/usr/bin/chromedriver"
+        driver = webdriver.Chrome(PATH)
 
-    #find elm passowrd and send password
-    password = driver.find_element_by_id("session_password")
-    password.send_keys(password)
-    password.send_keys(Keys.RETURN)
+        driver.get('https://www.linkedin.com')
+        print(driver.title)
+     
+        #find elem username/email and send username
+        email = driver.find_element_by_id("session_key")
+        email.send_keys(username) #
+     
 
-    time.sleep(5)
+        #find elm passowrd and send password
+        password = driver.find_element_by_id("session_password")
+        password.send_keys(password)
+        password.send_keys(Keys.RETURN)
 
-    signin = driver.find_element_by_class_name("sign-in-form__submit-button")
-    signin.click()
+        time.sleep(5)
 
+        signin = driver.find_element_by_class_name("sign-in-form__submit-button")
+        signin.click()
+
+    
 
 
   #  driver.quit()
-login()
+Scraper.login(Scraper, username, password)
 
 
 
