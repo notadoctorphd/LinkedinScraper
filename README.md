@@ -15,3 +15,15 @@ This is a basic script that should open a chrome driver, login to linkedin and b
 ### TODO: 
 ---
 
+
+
+Bugs:
+
+
+Features:
+- parsing is still non-existant
+- CLI search could be improved
+- 
+- extracting applied jobs data from 'saved jobs';
+- Clean up login process. 
+
