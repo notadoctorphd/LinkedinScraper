@@ -13,13 +13,13 @@ class Scraper:
 
     global username, password, PATH, driver
     username = **************   # input("Type Username: ")
-    password = **********  # input("Type Password: ")
+    password = **************  # input("Type Password: ")
     PATH = "/usr/bin/chromedriver"
     options = Options()
     options.add_argument('--headless')
     options.add_argument('--disable-gpu')  # Last I checked this was necessary.
     options.add_argument("--window-size=1920,1080")
-    driver = webdriver.Chrome(PATH) # , chrome_options=options)
+    driver = webdriver.Chrome(PATH, chrome_options=options)
 
     def __init__(self):
         pass
@@ -93,17 +93,17 @@ class Scraper:
         a = input('enter job number 1-10 : >> ')
         Xpath = f"//*[@class='disabled ember-view job-card-container__link job-card-list__title']//following::a[{a}]"
         search_list = driver.find_element_by_xpath(Xpath)
+        details_name = f"Search for {search_job} in {search_location}"
+        print(f"Printing  details from {details_name}")
         time.sleep(2)
 
     # //*[@id="ember635"]/div/div[1]
+        details_text = details.text
         searchlist = search_list.click()
         searchlist
-        details_text = details.text
-        details_name = f"Search for {search_job} in {search_location} with selection {a}"
-        print(f"Printing  details from {details_name}")
 #
+        # print(details_text)
         print(searchlist)
-        print(details_text)
         # #//*[contains(@id,'job-details')]
 
         # constructor >?
