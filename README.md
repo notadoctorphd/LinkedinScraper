@@ -18,7 +18,7 @@ This is a basic script that should open a chrome driver, login to linkedin and b
 
 
 Bugs:
-
+- Number of logins must be 25< in a certain period of time or you will be sent to authenitcation gulag. 
 
 Features:
 - parsing is still non-existant
