@@ -1,23 +1,36 @@
-# LinkedinScraper
-## The start of a project to learn selenium and bs4
+## LinkedinScraper
+### The start of a project to learn selenium and bs4
 
 This is a basic script that should open a chrome driver, login to linkedin and based on certain -flags scrape and parse data on candidates
 
---- 
-
-### INSTALLATION 
+##### INSTALLATION 
 ---
 
--
--
--
+- Make sure you have python3 installed and set as 'python'
+-``` mkdir``` a new directory
+- git clone this folder
+- ```pip -m venv /venv ``` to initiate a new venv for python
+- ```cd /venv/bin && source activate.sh (or .fish or .zsh) ```
+- cd .. cd ..
+- Use pip to install requirements ``` pip install -r requirements.txt ```
+- Install Chrome/firefox-driver and set the path as {PATH} in the py script. 
+- Pray 
+- Break your keyboard
+- rm -rf your /bin /usr/ and ~/home 
+- Laugh maniacally when the fire department comes to put out your computer which is currently engulfed in flames. 
+- ```cd [project/] && python scraper.headless.py```
 
-### TODO: 
+##### TODO: 
 ---
+- [ ] implement Tkinter gui with 
+		- authentication fields
+		- search fields
+		- login and other action buttons
+- [ ] add password or Oauth 
+- [ ] fix stability issues
 
-
-
-Bugs:
+	
+##### Bugs:
 - Number of logins must be 25< in a certain period of time or you will be sent to authenitcation gulag. 
 
 Features:
