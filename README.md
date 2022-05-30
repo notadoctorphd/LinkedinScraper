@@ -18,6 +18,15 @@ This is a basic script that should open a chrome driver, login to linkedin and b
 - Break your keyboard
 - rm -rf your /bin /usr/ and ~/home 
 - Laugh maniacally when the fire department comes to put out your computer which is currently engulfed in flames. 
+- Sob uncontrollably; like a little baby. 
+- You are, a little baby. 
+- Discover that the world is unfair and meaningless.
+- Ask yourself "why am I doing this to myself?"
+- Answer yourself "get a job!"
+- Enter the void that is the Everything Bagel
+- Feel the deep darkness of the void take you away..............
+- You are now one.
+
 - ```cd [project/] && python scraper.headless.py```
 
 ##### TODO: 
