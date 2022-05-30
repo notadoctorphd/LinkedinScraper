@@ -11,10 +11,6 @@ from tkinter import ttk
 import time
 
 
-
-
-# window.mainloop()
-
 class Scraper:  
 
     global username, password, PATH, driver, options
@@ -28,32 +24,28 @@ class Scraper:
     options.add_argument('--disable-gpu')  # Last I checked this was necessary.
     options.add_argument("--window-size=1920,1080")
 
-    # driver = webdriver.Chrome(PATH) # , chrome_options=options)
     driver = webdriver.Chrome(PATH) # , chrome_options=options)        
 
             
         
 
     def __init__(self):
+
         pass
     
-    # Scraper.login(Scraper, username, password)
-    # Scraper.job_scrapes(Scrape
 
     def login(self, username, password):
             
         self.username = username
         self.password = password
+
         driver.get('https://www.linkedin.com')
-        
-# find elem username/email and send username
-        email = driver.find_element_by_id("session_key")
+        email = driver.find_element_by_id("session_key") # find elem username/email and send username
 
         print(driver.title)
         print(driver.title + " is loading.....passing email to linkedin")
 
-        email.send_keys(username)
-        # find elm passoswrd and send password
+        email.send_keys(username) # find elm passoswrd and send password
         passwrd = driver.find_element_by_id("session_password")
         passwrd.send_keys(password)
 
@@ -64,34 +56,29 @@ class Scraper:
         signin.click()
 
         print('Login was Successful')
-
-        # should set global variable for search_job and should i
-        global search_job, search_location
-        # input("Search by title, skill, or company: ")
-        search_job = input("Search by title, skill, or company: ")
+        global search_job, search_location # should set global variable for search_job and should 
+        search_job = input("Search by title, skill, or company: ") 
         search_location = input("Enter location: ")
+
         
-# search_location = search_location.replace(", ", "%2C%20")
-# search_location = cg.onelineaddress(search_location)
-# location=Denver%2C%20Colorado%2C%20United%20States
     def job_scrapes(self):
-        # https://www.linkedin.com/jobs/search/?geoId=103644278&keywords=Recruit&location=United%20States
         site_linkedin = str(
             ("https://www.linkedin.com/jobs/search/?geoId=103644278&keywords=" + search_job))
         driver.get(site_linkedin)
         print(driver.title)
         time.sleep(3)
-# job_search = driver.find_element_by_id("jobs-search-box-keyword-id-ember30")
-# job_search.double_click()
-# time.sleep(3)
-# Scraper.cleartext(job_search)
-# job_search.send_keys(search_job)
-#
+'''
+This is all unnecessary if the search is added to the html link as keywords 
+job_search = driver.find_element_by_id("jobs-search-box-keyword-id-ember30")
+job_search.double_click()
+time.sleep(3)
+Scraper.cleartext(job_search)
+job_search.send_keys(search_job)
+'''
         print('Job scraping has commenced ... ... ... .. \n Please wait .. .. .. ')
         time.sleep(3)
         job_location = driver.find_element_by_xpath(
             "//input[contains(@id, 'location')]")
-# //*[@id="jobs-search-box-location-id-ember30"]
 # job_location.click()
         time.sleep(3)
         job_location.clear()
@@ -105,14 +92,12 @@ class Scraper:
         print('Locating Element ......... ')
 
 
-        # job-details > span > p:nth-child(3)
+        #This should function as a as a number locator maybe I should make a function for this specific task.  
         a = input('enter job number 1-10 : >> ')
         Xpath = f"/ /body/div[contains(@class,'application-outlet')]/div[contains(@class,'authentication-outlet')]/div[contains(@role,'main')]/div[contains(@class,'jobs-search-two-pane__wrapper')]/div[contains(@class,'jobs-search-two-pane__container grid grid__col')]/section[contains(@class,'jobs-search__left-rail')]/div[contains(@aria-label,'search results')]/div[contains(@class,'jobs-search-results display-flex flex-column')]/ul[contains(@class,'jobs-search-results__list list-style-none')]/li[1]/div[1]/div[1]"
         # Xpath = f"//*[contains(@class, 'lockup__title ember')]/div[{a}]"
         search_list = driver.find_element_by_xpath(Xpath)
         time.sleep(2)
-
-    # //*[@id="ember635"]/div/div[1]
         searchlist = search_list.click()
         # searchlist_text = searchlist.text
         details = driver.find_element_by_xpath("//body//div//article//span[1]")
@@ -124,17 +109,7 @@ class Scraper:
         # print(searchlist_text)
         print(details_text)
         # #//*[contains(@id,'job-details')]
-
-        # constructor >?
-    # if a  ==range(1,10):
-    # select_append =
-
-        # button_search = driver.find_element_by_xpath("/html/body/div[5]/header/div/div/div/div[2]/button[1]")
-        # button_search.click()
-        # # else:
-        # # job_location.send_keys(search_job)
-        #
-# button functions. There should be a better way to write and implemenet these.        
+    
 def initApp():
     try: 
         Scraper.login(Scraper, username, password)   
@@ -186,16 +161,25 @@ if __name__ == "__main__":
 '''
 junk code
 
-'''
+def emberIter(self, selection):
+selector = input('Select 1-10:  ')
+if selector == (int > 0):
+if selector == i in range(1,10):
+selector = search_list(selector)
+return selector
+else:
+pass
+else:
+pass
 
-# def emberIter(self, selection):
-# selector = input('Select 1-10:  ')
-# if selector == (int > 0):
-# if selector == i in range(1,10):
-# selector = search_list(selector)
-# return selector
-# else:
-# pass
-# else:
-# pass
-#
+         constructor >?
+     if a  ==range(1,10):
+     select_append =
+
+        button_search = driver.find_element_by_xpath("/html/body/div[5]/header/div/div/div/div[2]/button[1]")
+        button_search.click()
+         else:
+         job_location.send_keys(search_job)
+        
+ button functions. There should be a better way to write and implemenet these.
+'''
