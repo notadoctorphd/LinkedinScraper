@@ -94,12 +94,12 @@ class Scraper:
     def scrape_details(self):
         
         a = int(input('enter job number 1-10 : >>'))
-        def aplus(a):
+        def amin(a):
             if a !=0:
-                return a + 1
+                return a - 1
             else:
                 return a
-        aplus(a)
+        amin(a)
        
         XPATH = f"//*[contains(@class, 'viewport-tracking-{a}')]"
         Xpath = "//div[@class='job-view-layout jobs-details']"
